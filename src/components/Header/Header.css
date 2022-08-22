@@ -1,0 +1,19 @@
+.header-top {
+    background-color: #031059;
+}
+
+.header {
+    height: 80px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1em;
+    font-size: 20px;
+}
