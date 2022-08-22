@@ -13,6 +13,7 @@ const Shop = () => {
 
     const [cart, setCart] = useState([]);
     const addToCart = (product) => {
+        // cart use with spread operator 
         const newCart = [...cart, product];
         setCart(newCart);
     }
@@ -22,7 +23,7 @@ const Shop = () => {
             <div className='shop'>
                 <div className="products">
                     {
-                        products.slice(0, 30).map(product => <Products
+                        products.slice(0, 18).map(product => <Products
                             key={product.id}
                             product={product}
                             addToCart={addToCart}
@@ -31,6 +32,7 @@ const Shop = () => {
                 </div>
                 <div className="orders">
                     <h2>Order Summery</h2>
+                    <p>Order Item: {cart.length}</p>
                     <p>Order Item: {cart.length}</p>
                     <p>Order Item: {cart.length}</p>
                     <p>Order Item: {cart.length}</p>

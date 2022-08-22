@@ -25,6 +25,10 @@
     font-weight: 200;
 }
 
+.button button i {
+    margin-left: 1em;
+}
+
 .button button:hover {
     background-color: #F2836B;
     transform: translate(3px, 3px);
