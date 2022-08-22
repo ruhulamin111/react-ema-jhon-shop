@@ -14,3 +14,22 @@
     display: flex;
     justify-content: space-between;
 }
+
+.button button {
+    background-color: #f24405cc;
+    padding: 1em;
+    border: none;
+    border-radius: 1em;
+    color: #F2F2F2;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.button button:hover {
+    background-color: #F2836B;
+    transform: translate(3px, 3px);
+    transition: transform .3s ease;
+    background-color: #F24405;
+    /* transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]; */
+
+}
