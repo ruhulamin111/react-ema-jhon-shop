@@ -1,5 +1,7 @@
 .header-top {
     background-color: #031059;
+    position: sticky;
+    top: 0;
 }
 
 .header {
@@ -22,5 +24,5 @@
     text-decoration: none;
     font-size: 20px;
     color: #F24405;
-    font-size: 22px;
+
 }

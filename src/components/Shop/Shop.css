@@ -6,6 +6,7 @@
 .shop {
     display: grid;
     grid-template-columns: 4fr 1fr;
+
 }
 
 .products {
@@ -16,10 +17,11 @@
 }
 
 .orders {
-    background-color: #F2836B;
+    background-color: #f24405c7;
     padding: 1em;
     margin: 0 0 0 1em;
     color: white;
+
 }
 
 .order-btn {
@@ -45,7 +47,6 @@
 }
 
 
-
 @media screen and (max-width:672px) {
     .products {
         display: grid;
@@ -59,5 +60,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2em;
+    }
+
+    .order-btn {
+        display: block;
+        line-height: 3em;
     }
 }
