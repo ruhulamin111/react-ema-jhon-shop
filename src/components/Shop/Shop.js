@@ -11,6 +11,10 @@ const Shop = () => {
 
     }, []);
 
+    const addToCart = (product) => {
+        console.log('click');
+    }
+
     return (
         <div className='container'>
             <div className='shop'>
@@ -19,6 +23,7 @@ const Shop = () => {
                         products.slice(0, 30).map(product => <Products
                             key={product.id}
                             product={product}
+                            addToCart={addToCart}
                         ></Products>)
                     }
                 </div>
