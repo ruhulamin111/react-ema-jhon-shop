@@ -1,0 +1,16 @@
+.product {
+    border: 1px solid #F2836B;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.product img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1em;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+}
