@@ -8,9 +8,14 @@ const Cart = ({ cart }) => {
     const shippingCost = (previous, current) => previous + current.shipping;
     const shippingTotal = cart.reduce(shippingCost, 0);
 
+    // let total = 0;
+    // for (const product of cart) {
+    //     total = total + product.price;
+    // }
+
     const totalCost = total + shippingTotal;
-    const tax = totalCost * .01;
-    const grandTotal = totalCost + tax;
+    const tax = (totalCost * .1).toFixed(2);
+    const grandTotal = totalCost + parseFloat(tax);
 
     return (
         <div className='cart'>
