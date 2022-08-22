@@ -11,7 +11,7 @@ const Header = () => {
                         <img src={logo} alt="" />
                     </a>
                 </div>
-                <div>
+                <div className='nav'>
                     <a href="#home">Home</a>
                     <a href="#shop">Shop</a>
                     <a href="#order">Order</a>
