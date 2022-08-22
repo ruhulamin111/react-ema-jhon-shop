@@ -32,6 +32,13 @@ const Shop = () => {
                 <div className="orders">
                     <h2>Order Summery</h2>
                     <p>Order Item: {cart.length}</p>
+                    <p>Order Item: {cart.length}</p>
+                    <p>Order Item: {cart.length}</p>
+                    <p>Order Item: {cart.length}</p>
+                    <div className='order-btn'>
+                        <button>Clear Cart</button>
+                        <button>Confirm Order</button>
+                    </div>
                 </div>
             </div>
 
