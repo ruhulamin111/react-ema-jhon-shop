@@ -11,8 +11,10 @@ const Shop = () => {
 
     }, []);
 
+    const [cart, setCart] = useState([]);
     const addToCart = (product) => {
-        console.log('click');
+        const newCart = [...cart, product];
+        setCart(newCart);
     }
 
     return (
@@ -28,7 +30,8 @@ const Shop = () => {
                     }
                 </div>
                 <div className="orders">
-                    <h2>orders</h2>
+                    <h2>Order Summery</h2>
+                    <p>Order Item: {cart.length}</p>
                 </div>
             </div>
 
