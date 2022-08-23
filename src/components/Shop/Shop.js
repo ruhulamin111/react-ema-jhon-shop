@@ -23,11 +23,18 @@ const Shop = () => {
 
     useEffect(() => {
         const storedCart = getStoredCart();
+        const savedCart = [];
         for (const id in storedCart) {
-            const addedProduct = products.find(product => product.id === id)
-            console.log(addedProduct);
+            const addedProduct = products.find(product => product.id === id);
+            if (addedProduct) {
+                const quantity = addedProduct[id];
+                addedProduct.quantity = quantity;
+                savedCart.push(addedProduct)
+            }
         }
-    }, [])
+        setCart(savedCart);
+    }, [products])
+
 
     return (
         <div className='container'>
