@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
 import './Shop.css'
@@ -17,7 +18,16 @@ const Shop = () => {
         // cart use with spread operator 
         const newCart = [...cart, product];
         setCart(newCart);
+        addToDb(product.id)
     }
+
+    useEffect(() => {
+        const storedCart = getStoredCart();
+        for (const id in storedCart) {
+            const addedProduct = products.find(product => product.id === id)
+            console.log(addedProduct);
+        }
+    }, [])
 
     return (
         <div className='container'>
