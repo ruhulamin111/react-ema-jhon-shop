@@ -12,7 +12,6 @@ const Shop = () => {
         fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
-
     }, []);
 
     useEffect(() => {
@@ -37,11 +36,10 @@ const Shop = () => {
             newCart = [...cart, selectedProduct]
         }
         else {
-            const rest = products.filter(product => product.id !== selectedProduct.id)
+            const rest = products.filter(product => product.id !== selectedProduct.id);
             exits.quantity = exits.quantity + 1;
             newCart = [...rest, exits];
         }
-
         setCart(newCart);
         addToDb(selectedProduct.id)
     }
@@ -62,10 +60,8 @@ const Shop = () => {
                     <Cart
                         cart={cart}
                     ></Cart>
-
                 </div>
             </div>
-
         </div>
     );
 };
