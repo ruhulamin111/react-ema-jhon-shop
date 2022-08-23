@@ -2,30 +2,37 @@ import React from 'react';
 import './Cart.css'
 
 const Cart = ({ cart }) => {
-    const priceSum = (previous, current) => previous + current.price;
-    const total = cart.reduce(priceSum, 0);
+    console.log(cart);
+    let total = 0;
+    let shipping = 0;
+    let quantity = 0;
+    for (const product of cart) {
+        quantity = quantity + product.quantity;
+        total = total + product.price * product.quantity;
+        shipping = shipping + product.shipping * product.quantity;
+    }
 
-    const shippingCost = (previous, current) => previous + current.shipping;
-    const shippingTotal = cart.reduce(shippingCost, 0);
+    /* const quantityTotal = (previous, current) => previous + current.quantity;
+    const quantity = cart.reduce(quantityTotal, 0);
 
-    // let total = 0;
-    // for (const product of cart) {
-    //     total = total + product.price;
-    // }
+    const priceTotal = (previous, current) => previous + current.price;
+    const total = cart.reduce(priceTotal, 0);
 
-    const totalCost = total + shippingTotal;
-    const tax = (totalCost * .1).toFixed(2);
-    const grandTotal = totalCost + parseFloat(tax);
+    const shippingTotal = (previous, current) => previous + current.shipping;
+    const shipping = cart.reduce(shippingTotal, 0); */
+
+    const totalCost = total + shipping;
+    const tax = parseFloat((totalCost * .1).toFixed(2));
+    const grandCost = totalCost + tax;
 
     return (
         <div className='cart'>
             <h2>Order Summery</h2>
-            <p>Selected Item: {cart.length}</p>
+            <p>Selected Item: {quantity}</p>
             <p>Total Price: {total} $</p>
-            <p>Shipping Cost: {shippingTotal} $</p>
+            <p>Shipping Cost: {shipping} $</p>
             <p>Value Added Tax: {tax} $</p>
-            <p>Grand Total: {grandTotal} $</p>
-
+            <p>Grand Total: {grandCost} $</p>
             <div className='order-btn'>
                 <button>Clear Cart</button>
                 <button>Confirm Order</button>
