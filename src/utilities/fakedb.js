@@ -19,6 +19,7 @@ const addToDb = (id) => {
     else {
         shoppingCart = {};
     }
+
     const quantity = shoppingCart[id];
     if (quantity) {
         const newQuantity = quantity + 1;

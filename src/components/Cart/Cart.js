@@ -35,6 +35,7 @@ const Cart = ({ cart }) => {
                 <button>Clear Cart</button>
                 <button>Confirm Order</button>
             </div>
+
         </div>
     );
 };
