@@ -7,15 +7,15 @@ const Header = () => {
         <div className='header-top'>
             <div className='header'>
                 <div>
-                    <a href="#home">
+                    <a href="/">
                         <img src={logo} alt="" />
                     </a>
                 </div>
                 <div className='nav'>
-                    <a href="#home">Home</a>
-                    <a href="#shop">Shop</a>
-                    <a href="#order">Order</a>
-                    <a href="#about">About</a>
+                    <a href="/home">Home</a>
+                    <a href="/shop">Shop</a>
+                    <a href="/order">Order</a>
+                    <a href="/about">About</a>
                 </div>
             </div>
 

@@ -25,7 +25,7 @@ const Cart = ({ cart }) => {
 
     return (
         <div className='cart'>
-            <h2>Order Summeryyy</h2>
+            <h2>Order Summery</h2>
             <p>Selected Item: {quantity}</p>
             <p>Total Price: {total} $</p>
             <p>Shipping Cost: {shipping} $</p>
