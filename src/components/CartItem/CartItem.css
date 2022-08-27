@@ -1,0 +1,25 @@
+.item {
+    display: flex;
+    justify-content: start;
+    border: 1px solid salmon;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 1em;
+}
+
+.img-container {
+    width: 20%;
+}
+
+.img-container img {
+    width: 100%;
+    border-radius: 1em;
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em;
+    width: 100%;
+}

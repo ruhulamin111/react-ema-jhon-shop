@@ -3,6 +3,7 @@ import useCart from '../../hooks/useCart/useCart';
 import useProducts from '../../hooks/useProducts/useProducts';
 import Cart from '../Cart/Cart';
 import CartItem from '../CartItem/CartItem';
+import './Order.css';
 
 const Order = () => {
     const [products] = useProducts()
@@ -11,7 +12,7 @@ const Order = () => {
     return (
         <div className='container'>
             <div className='shop'>
-                <div className="products">
+                <div className="order-review">
                     {
                         cart.map(product => <CartItem
                             key={product.id}
