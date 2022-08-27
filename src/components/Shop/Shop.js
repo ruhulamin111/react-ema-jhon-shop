@@ -18,8 +18,8 @@ const Shop = () => {
             newCart = [...cart, selectedProduct]
         }
         else {
-            const rest = products.filter(product => product.id !== selectedProduct.id);
             exits.quantity = exits.quantity + 1;
+            const rest = products.filter(product => product.id !== selectedProduct.id);
             newCart = [...rest, exits];
         }
         setCart(newCart);
