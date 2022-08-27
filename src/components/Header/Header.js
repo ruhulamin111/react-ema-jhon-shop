@@ -1,24 +1,24 @@
 import React from 'react';
 import './Header.css';
 import logo from '../../images/Logo.svg';
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
     return (
         <div className='header-top'>
             <div className='header'>
                 <div>
-                    <a href="/">
+                    <Link to='/shop'>
                         <img src={logo} alt="" />
-                    </a>
+                    </Link>
                 </div>
                 <div className='nav'>
-                    <a href="/home">Home</a>
-                    <a href="/shop">Shop</a>
-                    <a href="/order">Order</a>
-                    <a href="/about">About</a>
+                    <Link to='/shop'>Shop</Link>
+                    <Link to='/order'>Order</Link>
+                    <Link to='/about'>About</Link>
                 </div>
             </div>
-
         </div>
     );
 };
