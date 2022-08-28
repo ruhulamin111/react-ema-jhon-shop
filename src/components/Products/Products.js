@@ -9,7 +9,7 @@ const Products = ({ product, addToCart }) => {
     return (
         <div className='product'>
             <img src={img} alt="" />
-            <h3>{name.slice(0, 15)}</h3>
+            <h3 title={name}>{name.slice(0, 15)}</h3>
             <p>Price: <b>{price} $</b></p>
             <p>Seller: <b>{seller}</b></p>
             <p>Stock: <b>{stock}</b></p>

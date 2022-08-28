@@ -4,7 +4,8 @@ import useProducts from '../../hooks/useProducts/useProducts';
 import { addToDb, } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
-import './Shop.css'
+import './Shop.css';
+import { Link } from "react-router-dom";
 
 const Shop = () => {
     const [products] = useProducts();
@@ -39,12 +40,17 @@ const Shop = () => {
                     }
                 </div>
                 <div className="orders">
-                    <Cart
-                        cart={cart}
-                    ></Cart>
+                    <Cart cart={cart} >
+
+                        <Link to='/order'>
+                            <div className='order-btn'>
+                                <button>Proceed Checkout</button>
+                            </div>
+                        </Link>
+                    </Cart>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
