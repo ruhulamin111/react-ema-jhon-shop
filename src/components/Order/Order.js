@@ -1,7 +1,7 @@
 import React from 'react';
 import useCart from '../../hooks/useCart/useCart';
 import useProducts from '../../hooks/useProducts/useProducts';
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import CartItem from '../CartItem/CartItem';
 import './Order.css';
@@ -11,6 +11,12 @@ const Order = () => {
     const [cart] = useCart(products)
     const removeBtn = (id) => {
         removeFromDb(id)
+    }
+    const confirmOrder = () => {
+        alert('Your order is successfully completed')
+    }
+    const deleteOrder = () => {
+        deleteShoppingCart();
     }
 
     return (
@@ -26,9 +32,12 @@ const Order = () => {
                     }
                 </div>
                 <div className="orders">
-                    <Cart
-                        cart={cart}
-                    ></Cart>
+                    <Cart cart={cart}>
+                        <div className='order-btn'>
+                            <button onClick={confirmOrder}>Confirm</button>
+                            <button onClick={deleteOrder}>Delete</button>
+                        </div>
+                    </Cart>
                 </div>
             </div>
 

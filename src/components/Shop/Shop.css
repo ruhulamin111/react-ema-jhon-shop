@@ -21,7 +21,11 @@
     padding: 1em;
     margin: 0 0 0 1em;
     color: white;
+    text-decoration: none;
+}
 
+.orders a {
+    text-decoration: none;
 }
 
 .order-btn {
@@ -30,9 +34,10 @@
 }
 
 .order-btn button {
-    background-color: #2c3d73de;
+    background-color: #db067be1;
     padding: 1em;
     border: none;
+    text-decoration: none;
     border-radius: 1em;
     color: #F2F2F2;
     cursor: pointer;
@@ -42,7 +47,7 @@
 .order-btn button:hover {
     transform: translate(3px, 3px);
     transition: transform .3s ease;
-    background-color: #2C3D73;
+    background-color: #db067bad;
 
 }
 
