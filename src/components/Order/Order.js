@@ -13,9 +13,11 @@ const Order = () => {
         removeFromDb(id)
     }
     const confirmOrder = () => {
-        alert('Your order is successfully completed')
+        deleteShoppingCart();
+        alert('Your order is successfully completed');
     }
     const deleteOrder = () => {
+        window.confirm('Are you sure to delete shopping items');
         deleteShoppingCart();
     }
 
