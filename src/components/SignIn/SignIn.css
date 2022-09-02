@@ -1,0 +1,11 @@
+.login-container {
+    width: 600px;
+    margin: 2em auto;
+    border: 1px solid salmon;
+    border-radius: 1em;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin: 1em 0;
+}
