@@ -5,16 +5,17 @@ import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import CartItem from '../CartItem/CartItem';
 import './Order.css';
+import { useNavigate } from 'react-router-dom';
 
 const Order = () => {
     const [products] = useProducts()
     const [cart] = useCart(products)
+    const navigate = useNavigate()
     const removeBtn = (id) => {
         removeFromDb(id)
     }
     const confirmOrder = () => {
-        deleteShoppingCart();
-        alert('Your order is successfully completed');
+        navigate('/shipment')
     }
     const deleteOrder = () => {
         window.confirm('Are you sure to delete shopping items');

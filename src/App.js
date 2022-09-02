@@ -8,6 +8,7 @@ import NotFound from './components/NotFound/NotFound';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import Shipment from './components/Shipment/Shipment';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Order></Order>
           </RequireAuth>
         }></Route>
+        <Route path='/shipment' element={<Shipment></Shipment>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
