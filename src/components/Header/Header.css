@@ -21,8 +21,16 @@
 }
 
 .nav a:hover {
-    text-decoration: none;
-    font-size: 20px;
     color: #F24405;
+}
 
+.nav span {
+    cursor: pointer;
+    color: white;
+    margin: 0 1em;
+    font-size: 20px;
+}
+
+.nav span:hover {
+    color: #F24405;
 }
