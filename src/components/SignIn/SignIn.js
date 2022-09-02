@@ -38,9 +38,9 @@ const SignIn = () => {
             <h2>Sign In</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="">Email</label>
-                <input onBlur={handleEmail} type="email" name="" placeholder='email' />
+                <input onBlur={handleEmail} type="email" name="" placeholder='email' required />
                 <label htmlFor="">Password</label>
-                <input onBlur={handlePassword} type="password" name="" placeholder='password' />
+                <input onBlur={handlePassword} type="password" name="" placeholder='password' required />
                 <input className='submit' type="submit" value="Sign In" />
             </form>
             <div className='social-login'>

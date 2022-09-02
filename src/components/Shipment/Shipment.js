@@ -29,13 +29,13 @@ const Shipment = () => {
             <h2>Shipment Information</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="">Name</label>
-                <input onBlur={handleName} type="text" name="" placeholder='name' />
+                <input onBlur={handleName} type="text" name="" placeholder='name' required />
                 <label htmlFor="">Email</label>
-                <input onBlur={handleEmail} type="email" name="" placeholder='email' />
+                <input onBlur={handleEmail} type="email" name="" placeholder='email' required />
                 <label htmlFor="">Phone</label>
-                <input onBlur={handlePhone} type="number" name="" placeholder='phone' />
+                <input onBlur={handlePhone} type="number" name="" placeholder='phone' required />
                 <label htmlFor="">Address</label>
-                <input onBlur={handleAddress} type="text" name="" placeholder='address' />
+                <input onBlur={handleAddress} type="text" name="" placeholder='address' required />
                 <input className='submit' type="submit" value="Complete" />
             </form>
         </div>

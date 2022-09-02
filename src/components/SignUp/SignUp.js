@@ -50,13 +50,13 @@ const SignUp = () => {
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="">Name</label>
-                <input onBlur={handleName} type="name" name="" placeholder='name' />
+                <input onBlur={handleName} type="name" name="" placeholder='name' required />
                 <label htmlFor="">Email</label>
-                <input onBlur={handleEmail} type="email" name="" placeholder='email' />
+                <input onBlur={handleEmail} type="email" name="" placeholder='email' required />
                 <label htmlFor="">Password</label>
-                <input onBlur={handlePassword} type="password" name="" placeholder='password' />
+                <input onBlur={handlePassword} type="password" name="" placeholder='password' required />
                 <label htmlFor="">Confirm Password</label>
-                <input onBlur={handleConfirmPassword} type="password" name="" placeholder='confirm password' />
+                <input onBlur={handleConfirmPassword} type="password" name="" placeholder='confirm password' required />
                 <p className='error'>{error}</p>
                 <input className='submit' type="submit" value="Sign Up" />
             </form>
