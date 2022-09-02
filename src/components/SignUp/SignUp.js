@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const SignUp = () => {
     const [name, setName] = useState('');
@@ -7,6 +9,9 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const [createUserWithEmailAndPassword, user, loading, error2] = useCreateUserWithEmailAndPassword(auth)
+    const navigate = useNavigate();
+
     const handleName = event => {
         setName(event.target.value)
     }
@@ -25,9 +30,17 @@ const SignUp = () => {
             setError('Your password did not matched')
             return;
         }
+        createUserWithEmailAndPassword(email, password)
     }
-
-
+    if (loading) {
+        return <p>Loading...</p>
+    }
+    if (error) {
+        return <p>{error2.message}</p>
+    }
+    if (user) {
+        navigate('/shop')
+    }
 
     return (
         <div className='login-container'>
@@ -42,7 +55,7 @@ const SignUp = () => {
                 <label htmlFor="">Confirm Password</label>
                 <input onBlur={handleConfirmPassword} type="password" name="" placeholder='confirm password' />
                 <p className='error'>{error}</p>
-                <input className='submit' type="submit" value="Sign In" />
+                <input className='submit' type="submit" value="Sign Up" />
             </form>
             <div className='social-login'>
                 <p>Already have an account? <Link to='/signin'>Please sign in</Link> </p>
