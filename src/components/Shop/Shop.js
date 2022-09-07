@@ -1,6 +1,5 @@
 import React from 'react';
 import useCart from '../../hooks/useCart/useCart';
-
 import { addToDb, } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
@@ -11,7 +10,7 @@ import { useEffect } from 'react';
 
 const Shop = () => {
     const [products, setProducts] = useState([])
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const [page, setPage] = useState(0)
     const [pageNumber, setPageNumber] = useState(0)
     const [size, setSize] = useState(10)
@@ -34,18 +33,18 @@ const Shop = () => {
 
     const addToCart = (selectedProduct) => {
         let newCart = [];
-        const exits = products.find(product => product.id === selectedProduct.id);
+        const exits = products.find(product => product._id === selectedProduct._id);
         if (!exits) {
             selectedProduct.quantity = 1
             newCart = [...cart, selectedProduct]
         }
         else {
             exits.quantity = exits.quantity + 1;
-            const rest = products.filter(product => product.id !== selectedProduct.id);
+            const rest = products.filter(product => product._id !== selectedProduct._id);
             newCart = [...rest, exits];
         }
         setCart(newCart);
-        addToDb(selectedProduct.id)
+        addToDb(selectedProduct._id)
     }
 
     return (
@@ -55,7 +54,7 @@ const Shop = () => {
                     <div className="products">
                         {
                             products.map(product => <Products
-                                key={product.id}
+                                key={product._id}
                                 product={product}
                                 addToCart={addToCart}
                             ></Products>)
@@ -70,7 +69,7 @@ const Shop = () => {
                             > {number + 1}</button>)
                         }
                         <select onChange={e => setSize(e.target.value)}>
-                            <option value="10" selected>10</option>
+                            <option value="10" >10</option>
                             <option value="15" >15</option>
                             <option value="20" >20</option>
                         </select>

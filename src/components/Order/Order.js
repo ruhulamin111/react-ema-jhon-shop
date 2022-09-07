@@ -11,8 +11,8 @@ const Order = () => {
     const [products] = useProducts()
     const [cart] = useCart(products)
     const navigate = useNavigate()
-    const removeBtn = (id) => {
-        removeFromDb(id)
+    const removeBtn = (_id) => {
+        removeFromDb(_id)
     }
     const confirmOrder = () => {
         navigate('/shipment')
@@ -28,7 +28,7 @@ const Order = () => {
                 <div className="order-review">
                     {
                         cart.map(product => <CartItem
-                            key={product.id}
+                            key={product._id}
                             removeBtn={removeBtn}
                             product={product}
                         ></CartItem>)
