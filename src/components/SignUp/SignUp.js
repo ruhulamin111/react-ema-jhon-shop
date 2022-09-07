@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 
 const SignUp = () => {
     const [name, setName] = useState('');
+    console.log(name);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
