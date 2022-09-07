@@ -12,7 +12,7 @@ const SignUp = () => {
     const [createUserWithEmailAndPassword, user, loading, error2] = useCreateUserWithEmailAndPassword(auth)
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleName = event => {
@@ -34,6 +34,7 @@ const SignUp = () => {
             return;
         }
         createUserWithEmailAndPassword(email, password)
+
     }
     if (loading) {
         return <p>Loading...</p>
